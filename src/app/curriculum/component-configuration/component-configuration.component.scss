@@ -1,0 +1,37 @@
+.flex-centered{
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title{
+        margin-bottom: 8px
+    }
+}
+
+.font-bold{
+    font-weight: 600;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.flex-wrapped{
+    flex-wrap: wrap;
+}
+
+.component-title{
+    margin-bottom: 1em;
+}
+
+.component-card-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter-fields:not(:last-child){
+    margin-right: 1.6em;
+}

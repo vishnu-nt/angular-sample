@@ -1,0 +1,28 @@
+<ly-paper class="h100">
+  <ly-drawer-container [withClass]="classes.drawerContainer">
+    <ly-drawer
+      #_drawer="lyDrawer"
+      ly-paper
+      opened
+      position="before"
+      [withClass]="classes.drawer"
+    >
+      <div ly-line [withClass]="classes.sidenavTitle">Curriculum</div>
+      <ly-list>
+        <a
+          [routerLink]="[item.linkTo]"
+          *ngFor="let item of curriculumMenu"
+          routerLinkActive="second-sidenav-active"
+        >
+          <button ly-list-item>
+            <span ly-line>{{ item.name }}</span>
+          </button>
+        </a>
+      </ly-list>
+    </ly-drawer>
+
+    <ly-drawer-content [withClass]="classes.drawerContent">
+      <router-outlet></router-outlet>
+    </ly-drawer-content>
+  </ly-drawer-container>
+</ly-paper>

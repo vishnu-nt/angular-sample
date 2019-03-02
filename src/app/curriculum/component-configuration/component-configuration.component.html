@@ -1,0 +1,72 @@
+<div class="flex-centered">
+  <span>
+    <p lyTyp="title" class="title">Component-configuration</p>
+    <p lyTyp color="text:secondary">
+      curriculum / <span class="font-bold">Component Configuration</span>
+    </p>
+  </span>
+  <button ly-button raised bg="Quepal" (click)="addComponent()">
+    + Add component
+  </button>
+</div>
+
+<ly-paper [style.padding]="'1em 1.3em'">
+  <h4 lyTyp class="title">General settings</h4>
+      <div class="flex flex-wrapped">
+      <ly-field appearance="outlined" *ngFor="let setting of settings" class="filter-fields">
+        <ly-label>{{ setting.label }}</ly-label>
+        <ly-select placeholder="{{ setting.placeholder }}">
+          <ly-option value="1">Item 1</ly-option>
+          <ly-option value="2">Item 2</ly-option>
+          <ly-option value="3">Item 3</ly-option>
+        </ly-select>
+      </ly-field>
+    </div>
+</ly-paper>
+
+<ly-paper [style.padding]="'1em'" [style.margin]="'2em 0'">
+  <h4 lyTyp class="title component-title">Components</h4>
+  <ly-grid container [spacing]="8" *ngIf="componentList.length">
+    <ly-grid item [col]="4" *ngFor="let component of componentList">
+      <ly-card style="max-width: 320px; box-shadow: none" [withClass]="classes.card">
+        <ly-card-content [withClass]="classes.cardContent">
+          <div class="component-card-title">
+            <h2 lyTyp="headline" [withClass]="classes.cardTitle" gutterBottom>
+              {{ component.name }}
+            </h2>
+            <button
+              ly-button
+              appearance="icon"
+              [withClass]="classes.deleteIcon"
+              (click)="removeComponent(component.idx)"
+            >
+              <ly-icon [style.fontSize]="'22px'">delete_outline</ly-icon>
+            </button>
+          </div>
+          <p lyTyp="body1">
+            <ly-field fullWidth #_field appearance="outlined">
+              <input
+                lyNativeControl
+                disabled
+                placeholder="{{ component.name }}"
+                type="text"
+                readonly
+              />
+            </ly-field>
+          </p>
+        </ly-card-content>
+      </ly-card>
+    </ly-grid>
+  </ly-grid>
+
+  <div *ngIf="!componentList.length" [withClass]="classes.noCompTemplate">
+    <ly-icon [style.fontSize]="'5em'">apps</ly-icon>
+    <p lyTyp color="text:secondary" [withClass]="classes.noCompTitle">
+      No components yet
+    </p>
+    <p lyTyp color="text:secondary">
+      Create and configure components for which <br />
+      teachers will be entering marks
+    </p>
+  </div>
+</ly-paper>

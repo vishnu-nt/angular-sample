@@ -1,0 +1,12 @@
+<div ly-dialog-title gutterBottom [style.textAlign]="'center'">
+    <ly-icon [style.fontSize]="'5em'" class="cancel-icon">cancel</ly-icon>
+</div>
+<div ly-dialog-content>
+  <p lyTyp="title" class="title modal-title">
+    Are you sure <br/> you want to delete component?
+  </p>
+</div>
+<ly-grid container justify="space-between" ly-dialog-actions>
+  <button ly-button color="primary" [style.background]="'#e4e4e7'" (click)="dialogRef.close(false)">No, cancel it</button>
+  <button ly-button bg="warn" (click)="dialogRef.close(true)">Delete component</button>
+</ly-grid>

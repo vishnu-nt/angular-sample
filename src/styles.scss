@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, .h100{
+    height: 100%;
+}
+body{
+    height: 100%;
+    background-color: #f8f9fa;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ly-dialog-container{
+    padding: 4vw 8vw;
+}
+
+.cancel-icon{
+    font-size: 5em;
+    color:#e7e7f0;
+}
+
+.modal-title{
+    padding: 2em 0;
+    line-height: 2em;
+    max-width: 300px;
+    text-align: center;
+}
+
+.sidebarlink-active > *{
+    color: #ff8599 !important;
+}
+
+.second-sidenav-active > button{
+    background-color: #fff9f6 !important;
+}
