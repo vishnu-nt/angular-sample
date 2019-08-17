@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "nexsquare": {
+    "angular_sample": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/nexsquare",
+            "outputPath": "dist/angular_sample",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -34,12 +34,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -49,31 +47,29 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "nexsquare:build"
+            "browserTarget": "angular_sample:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "nexsquare:build:production"
+              "browserTarget": "angular_sample:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nexsquare:build"
+            "browserTarget": "angular_sample:build"
           }
         },
         "test": {
@@ -107,7 +103,7 @@
         }
       }
     },
-    "nexsquare-e2e": {
+    "angular_sample-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "nexsquare:serve"
+            "devServerTarget": "angular_sample:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "nexsquare:serve:production"
+              "devServerTarget": "angular_sample:serve:production"
             }
           }
         },
@@ -136,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "nexsquare"
+  "defaultProject": "angular_sample"
 }

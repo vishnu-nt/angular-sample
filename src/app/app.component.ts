@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { LyTheme2, ThemeVariables } from '@alyle/ui';
+import { Component } from "@angular/core";
+import { LyTheme2, ThemeVariables } from "@alyle/ui";
 
 const STYLES = (theme: ThemeVariables) => ({
-  '@global': {
+  "@global": {
     body: {
       backgroundColor: theme.background.default,
       color: theme.text.default,
@@ -14,15 +14,14 @@ const STYLES = (theme: ThemeVariables) => ({
 });
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
   readonly classes = this.theme.addStyleSheet(STYLES);
 
-  title = 'nexsquare';
+  title = "Angular";
 
-  constructor(private theme: LyTheme2) { }
-
+  constructor(private theme: LyTheme2) {}
 }

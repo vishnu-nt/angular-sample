@@ -1,41 +1,21 @@
 <ly-paper class="h100">
-  <ly-toolbar
-    position="static"
-    bg="primary"
-    [elevation]="3"
-    [withClass]="classes.navbar"
-  >
+  <ly-toolbar position="static" bg="primary" [elevation]="3" [withClass]="classes.navbar">
     <div class="nav-left">
-      <ly-icon ly-list-icon disablePadding [withClass]="classes.logo"
-        >center_focus_strong</ly-icon
-      >
-      <h4 lyTyp [withClass]="classes.brand">Culcheth High School</h4>
+      <ly-icon ly-list-icon disablePadding [withClass]="classes.logo">center_focus_strong</ly-icon>
+      <h4 lyTyp [withClass]="classes.brand">Culche High School</h4>
     </div>
     <div [withClass]="classes.navRight">
-      <ly-icon ly-list-icon disablePadding [withClass]="classes.logo"
-        >notifications</ly-icon
-      >
+      <ly-icon ly-list-icon disablePadding [withClass]="classes.logo">notifications</ly-icon>
       <ly-avatar [size]="28">
-        <img
-          src="https://pbs.twimg.com/profile_images/553734462903549952/a6jUjPNX.jpeg"
-        />
+        <img src="https://pbs.twimg.com/profile_images/553734462903549952/a6jUjPNX.jpeg" />
       </ly-avatar>
       <span [withClass]="classes.userInfo">Mike Simons</span>
-      <ly-icon ly-list-icon disablePadding [withClass]="classes.logo"
-        >expand_more</ly-icon
-      >
+      <ly-icon ly-list-icon disablePadding [withClass]="classes.logo">expand_more</ly-icon>
     </div>
   </ly-toolbar>
 
   <ly-drawer-container [withClass]="classes.drawerContainer">
-    <ly-drawer
-      #_drawer="lyDrawer"
-      ly-paper
-      opened
-      position="before"
-      [width]="width"
-      [withClass]="classes.drawer"
-    >
+    <ly-drawer #_drawer="lyDrawer" ly-paper opened position="before" [width]="width" [withClass]="classes.drawer">
       <ly-list>
         <button *ngFor="let item of navItems" ly-list-item [withClass]="classes.linkButton">
           <a [routerLink]="[item.linkTo]" routerLinkActive="sidebarlink-active">
